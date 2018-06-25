@@ -11,12 +11,14 @@ campo.on("input", function() {
     console.log(conteudo);
     
     //Depois que o browser reconhece o evento de input, obtemos o valor do seu conteúdo,
-    //assim com a função split podemos usar expressão regular que remove os espaços
+    //assim com a função split podemos usar expressão regular que remove os espaços.
     var qtdPalavras = conteudo.split(/\S+/).length - 1;
     $("#contador-palavras").text(qtdPalavras);
 
     //O mesmo é feito com a quantidade de caracteres
-    var qtdCaracteres = conteudo.length;
+    //e também a remoção do bug dos espaços.
+    var conteudoSemEspaco = conteudo.replace(/\s+/g,'');
+    var qtdCaracteres = conteudoSemEspaco.length;
     $("#contador-caracteres").text(qtdCaracteres);
 })
 
