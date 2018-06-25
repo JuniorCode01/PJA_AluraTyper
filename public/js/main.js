@@ -8,7 +8,8 @@ contadorAtual.text(contadorPalavras); //substituindo seu valor de texto para o n
 var campo = $(".campo-digitacao"); //obtendo o conteúdo de dento do text area através do evento de input
 campo.on("input", function() {
     conteudo = campo.val();
-
+    console.log(conteudo);
+    
     //Depois que o browser reconhece o evento de input, obtemos o valor do seu conteúdo,
     //assim com a função split podemos usar expressão regular que remove os espaços
     var qtdPalavras = conteudo.split(/\S+/).length - 1;
@@ -22,4 +23,4 @@ campo.on("input", function() {
 //mensagens do console
 console.groupCollapsed('Mensagens de Teste');
 console.log(contadorPalavras);
-console.groupEnd
+console.groupEnd();
